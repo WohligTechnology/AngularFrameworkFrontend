@@ -1,35 +1,35 @@
 // JavaScript Document
 var firstapp = angular.module('firstapp', [
-  'ngRoute',
-  'phonecatControllers',
-  'templateservicemod',
+    'ui.router',
+    'phonecatControllers',
+    'templateservicemod',
     'navigationservice'
 ]);
 
-firstapp.config(['$routeProvider',
-  function ($routeProvider) {
-        $routeProvider.
-        when('/home', {
-            templateUrl: 'views/template.html',
-            controller: 'home'
-        }).
-        when('/about', {
-            templateUrl: 'views/template.html',
-            controller: 'about'
-        }).
-        when('/services', {
-            templateUrl: 'views/template.html',
-            controller: 'services'
-        }).
-        when('/portfolio', {
-            templateUrl: 'views/template.html',
-            controller: 'portfolio'
-        }).
-        when('/contact', {
-            templateUrl: 'views/template.html',
-            controller: 'contact'
-        }).
-        otherwise({
-            redirectTo: '/home'
-        });
-  }]);
+firstapp.config(function($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
+    //Turn the spinner on or off
+    cfpLoadingBarProvider.includeSpinner = false;
+
+    $stateProvider
+
+    .state('home', {
+        url: "/home",
+        templateUrl: "views/template.html",
+        controller: 'HomeCtrl'
+    })
+
+    .state('feature', {
+        url: "/feature",
+        templateUrl: "views/template.html",
+        controller: 'FeatureCtrl'
+    })
+    
+    .state('infinite', {
+        url: "/infinite",
+        templateUrl: "views/template.html",
+        controller: 'InfiniteCtrl'
+    })
+
+    $urlRouterProvider.otherwise("/home");
+
+});

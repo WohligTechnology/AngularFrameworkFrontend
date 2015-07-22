@@ -1,0 +1,15 @@
+/*Custom css file*/
+
+body {
+    padding-top: 70px;
+}
+.form-group .form-control.ng-invalid.ng-dirty.ng-touched {
+    border-color: #a94442;
+}
+/*.valdr-message {
+    display: none;
+}
+.valdr-message.ng-dirty.ng-invalid.ng-touched {
+    display: inline;
+    color: #a94442;
+}*/

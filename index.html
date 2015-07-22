@@ -1,32 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="firstapp">
+<!DOCTYPE html>
+<html lang="en" ng-app="firstapp">
+
 <head ng-controller="headerctrl">
-<title ng-bind="'Website Name - '+template.title">Website Name</title>
-<link rel="shortcut icon" href="img/favicon.ico"/>
-<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css" />
-<link rel="stylesheet" type="text/css" href="lib/css/animate.css" />
-<link rel="stylesheet" type="text/css" href="css/main.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="lib/js/jquery-1.11.1.min.js"></script>
-<script src="lib/js/angular.min.js"></script>
-<!--<script src="lib/js/angular-animate.js"></script>-->
-<script src="lib/js/angular-route.min.js"></script>
-<!--<script src="lib/js/angular-resource.min.js"></script>-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<script src="lib/js/bootstrap.min.js"></script>
+    <title ng-bind="'Angular Framework Frontend - '+template.title">Angular Framework Frontend</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-social/angular-social.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-loading-bar/build/loading-bar.min.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angularjs-toaster/toaster.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/ng-tags-input/ng-tags-input.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/ui-select/dist/select.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/ngDialog/css/ngDialog.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
+    <script src="bower_components/angularjs-toaster/toaster.min.js"></script>
+    <script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+    <script src="bower_components/ngDialog/js/ngDialog.min.js"></script>
+    <script src="bower_components/angular-social/angular-social.js"></script>
+    <script src="bower_components/valdr/valdr.min.js"></script>
+    <script src="bower_components/valdr/valdr-message.min.js"></script>
+    <script src="bower_components/ngAutocomplete/src/ngAutocomplete.js"></script>
+    <script src="bower_components/ui-select/dist/select.min.js"></script>
+    <script src="bower_components/caman/dist/caman.full.min.js"></script>
+    <script src="bower_components/caman/dist/caman.min.js"></script>
+
+    <!--Just for the demo of ngAutocomplete-->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    <!--Just for the demo of ngAutocomplete-->
 
 
-<script src="js/app.js"></script>
-<script src="js/controllers.js"></script>
-<script src="js/templateservice.js"></script>
-<script src="js/navigation.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/templateservice.js"></script>
+    <script src="js/navigation.js"></script>
 
+    <!--[if IE]>
+        <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 </head>
+
 <body>
 
+    <div class="repeated-item" ui-view>
+    </div>
 
-  <div  class="repeated-item"  ng-view></div>
- 
+
+</body>
 
 </html>
