@@ -71,7 +71,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     });
 
     //Colours for ui-select
-    $scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
+    $scope.availableColors = ['Red', 'Green', 'Blue', 'Yellow', 'Magenta', 'Maroon', 'Umbra', 'Turquoise'];
+
+    //MomentJS
+    $scope.today = new Date();
+    $scope.dateformat="medium";
 
 })
 
