@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'cfp.loadingBar', 'infinite-scroll', 'toaster', 'ngAnimate', 'ngAutocomplete', 'ngTagsInput', 'ngDialog', 'ngSocial', 'valdr', 'ngSanitize', 'ui.select'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'cfp.loadingBar', 'infinite-scroll', 'toaster', 'ngAnimate', 'ngAutocomplete', 'ngTagsInput', 'ngDialog', 'ngSocial', 'valdr', 'ngSanitize', 'ui.select', 'angular-flexslider'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout) {
     //Used to name the .html file
@@ -6,6 +6,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     $scope.menutitle = NavigationService.makeactive("Home");
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
+
+        $scope.mySlides = [
+        'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
+        'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
+        'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
+        'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
+    ];
+
+
 })
 
 .controller('FeatureCtrl', function($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
@@ -75,7 +84,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
     //MomentJS
     $scope.today = new Date();
-    $scope.dateformat="medium";
+    $scope.dateformat = "medium";
 
 })
 
