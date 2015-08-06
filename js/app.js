@@ -44,14 +44,20 @@ firstapp.directive('img', function($compile, $parse) {
         restrict: 'E',
         replace: false,
         link: function($scope, element, attrs) {
-            $element = $(element);
-            $element.after("<img src='img/loading.gif' class='loading' />");
-            var $loading = $element.next(".loading");
-            $element.load(function() {
-                $loading.remove();
-                $(this).addClass("doneLoading");
-                console.log($element.css("opacity"));
-            });
+            var $element = $(element);
+            if(!attrs.noloading)
+            {
+                $element.after("<img src='img/loading.gif' class='loading' />");
+                var $loading = $element.next(".loading");
+                $element.load(function() {
+                    $loading.remove();
+                    $(this).addClass("doneLoading");
+                });
+            }
+            else
+            {
+                $($element).addClass("doneLoading");
+            }
         }
     };
 });
