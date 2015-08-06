@@ -1,6 +1,6 @@
 <ul class="nav navbar-nav">
-    <li ng-repeat="menu in navigation" class="{{menu.classis}}" ng-class="{'open': status.isopen}">
-        <a href="{{menu.link}}" ng-mouseenter="status.isopen = true" ng-mouseleave="status.isopen = false">{{menu.name}}</a>
+    <li ng-repeat="menu in navigation" class="{{menu.classis}}">
+        <a href="{{menu.link}}">{{menu.name}}</a>
         <ul class="dropdown-menu" ng-if="menu.subnav!='';">
             <li ng-repeat="submenu in menu.subnav">
                 <a href="{{submenu.link}}">{{submenu.name}}</a>

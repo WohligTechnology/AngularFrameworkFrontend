@@ -23,7 +23,19 @@ var navigationservice = angular.module('navigationservice', [])
         active: "",
         link: "#/feature",
         classis: "active",
-        subnav: []
+        subnav: [{
+                name: "Subnav1",
+                classis: "active",
+                link: "#/home"
+            },{
+                name: "Subnav2",
+                classis: "active",
+                link: "#/home"
+            },{
+                name: "Subnav3",
+                classis: "active",
+                link: "#/home"
+            }]
     }, {
         name: "Infinite Scroll",
         active: "",
