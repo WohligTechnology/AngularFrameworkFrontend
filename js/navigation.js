@@ -6,36 +6,24 @@ var navigationservice = angular.module('navigationservice', [])
         classis: "active",
         link: "#/home",
         subnav: [{
-                name: "Subnav1",
-                classis: "active",
-                link: "#/home"
-            },{
-                name: "Subnav2",
-                classis: "active",
-                link: "#/home"
-            },{
-                name: "Subnav3",
-                classis: "active",
-                link: "#/home"
-            }]
+            name: "Subnav1",
+            classis: "active",
+            link: "#/home"
+        }, {
+            name: "Subnav2",
+            classis: "active",
+            link: "#/home"
+        }, {
+            name: "Subnav3",
+            classis: "active",
+            link: "#/home"
+        }]
     }, {
         name: "Features",
         active: "",
         link: "#/feature",
         classis: "active",
-        subnav: [{
-                name: "Subnav1",
-                classis: "active",
-                link: "#/home"
-            },{
-                name: "Subnav2",
-                classis: "active",
-                link: "#/home"
-            },{
-                name: "Subnav3",
-                classis: "active",
-                link: "#/home"
-            }]
+        subnav: []
     }, {
         name: "Infinite Scroll",
         active: "",
