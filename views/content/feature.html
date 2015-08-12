@@ -63,11 +63,17 @@
             {{color}}
         </ui-select-choices>
     </ui-select>
-    
+
     <h2>CamanJS</h2>
     <p>Coming soon.</p>
-    
+
     <h2>MomentJS</h2>
     <p>Date: {{today|date:dateformat}}</p>
     <button class="btn btn-default" ng-click='dateformat="fullDate";'>Option 1</button>
+
+    <h2>reCaptcha</h2>
+    <form ng-submit="submit()">
+        <div vc-recaptcha theme="'light'" key="'6LdYKQsTAAAAAJ3rIUqEmWASN31opCbLxRLqXAbA'" on-create="setWidgetId(widgetId)" on-success="setResponse(response)" on-expire="cbExpiration()"></div>
+        <button class="btn btn-default" type="submit">Submit</button>
+    </form>
 </section>

@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'cfp.loadingBar', 'infinite-scroll', 'toaster', 'ngAnimate', 'ngAutocomplete', 'ngTagsInput', 'ngDialog', 'ngSocial', 'valdr', 'ngSanitize', 'ui.select', 'angular-flexslider'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'cfp.loadingBar', 'infinite-scroll', 'toaster', 'ngAnimate', 'ngAutocomplete', 'ngTagsInput', 'ngDialog', 'ngSocial', 'valdr', 'ngSanitize', 'ui.select', 'angular-flexslider', 'vcRecaptcha'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout) {
     //Used to name the .html file
@@ -7,7 +7,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     TemplateService.title = $scope.menutitle;
     $scope.navigation = NavigationService.getnav();
 
-        $scope.mySlides = [
+    $scope.mySlides = [
         'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
         'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
         'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
@@ -17,7 +17,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 })
 
-.controller('FeatureCtrl', function($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr) {
+.controller('FeatureCtrl', function($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr,vcRecaptchaService) {
     $scope.template = TemplateService.changecontent("feature");
     $scope.menutitle = NavigationService.makeactive("Features");
     TemplateService.title = $scope.menutitle;
@@ -85,6 +85,42 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
     //MomentJS
     $scope.today = new Date();
     $scope.dateformat = "medium";
+
+    /*reCaptcha*/
+    $scope.response = null;
+    $scope.widgetId = null;
+
+    $scope.setResponse = function(response) {
+        $scope.response = response;
+        console.log($scope.response);
+    };
+    $scope.setWidgetId = function(widgetId) {
+        console.info('Created widget ID: %s', widgetId);
+        $scope.widgetId = widgetId;
+    };
+    $scope.cbExpiration = function() {
+        console.info('Captcha expired. Resetting response object');
+        $scope.response = null;
+    };
+    $scope.submit = function() {
+        var valid;
+        /**
+         * SERVER SIDE VALIDATION
+         *
+         * You need to implement your server side validation here.
+         * Send the reCaptcha response to the server and use some of the server side APIs to validate it
+         * See https://developers.google.com/recaptcha/docs/verify
+         */
+        console.log('sending the captcha response to the server', $scope.response);
+        if (valid) {
+            console.log('Success');
+        } else {
+            console.log('Failed validation');
+            // In case of a failed validation you need to reload the captcha
+            // because each response can be checked just once
+            vcRecaptchaService.reload($scope.widgetId);
+        }
+    };
 
 })
 
