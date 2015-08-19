@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'cfp.loadingBar', 'infinite-scroll', 'ngAnimate', 'ngDialog', 'valdr', 'ngSanitize', 'ui.select'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'cfp.loadingBar', 'infinite-scroll', 'toaster', 'ngAnimate', 'ngAutocomplete', 'ngTagsInput', 'ngDialog', 'ngSocial', 'valdr', 'ngSanitize', 'ui.select', 'angular-flexslider', 'vcRecaptcha'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout) {
     //Used to name the .html file
@@ -13,8 +13,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
         'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
     ];
-
-
 })
 
 .controller('FeatureCtrl', function($scope, TemplateService, NavigationService, cfpLoadingBar, $timeout, toaster, ngDialog, valdr,vcRecaptchaService) {

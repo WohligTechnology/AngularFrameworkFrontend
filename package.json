@@ -1,7 +1,7 @@
 {
-  "name": "ethanhunt",
-  "version": "1.0.0",
-  "description": "EthanHunt",
+  "name": "AngularFrameworkFrontend",
+  "version": "0.0.1",
+  "description": "AngularFrameworkFrontend",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "^0.4.5",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WohligTechnology/EthanHunt.git"
+    "url": "git+https://github.com/WohligTechnology/AngularFrameworkFrontend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WohligTechnology/EthanHunt/issues"
+    "url": "https://github.com/WohligTechnology/AngularFrameworkFrontend/issues"
   },
-  "homepage": "https://github.com/WohligTechnology/EthanHunt#readme"
+  "homepage": "https://github.com/WohligTechnology/AngularFrameworkFrontend#readme"
 }
