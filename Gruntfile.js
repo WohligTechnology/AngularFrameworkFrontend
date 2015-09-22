@@ -17,11 +17,9 @@ module.exports = function(grunt) {
       dist: {
         src: [
           './bower_components/jquery/dist/jquery.min.js',
-          './bower_components/moment/min/moment.min.js',
           './bower_components/bootstrap/dist/js/bootstrap.min.js',
           './bower_components/flexslider/jquery.flexslider-min.js',
           './bower_components/angular/angular.min.js',
-          './bower_components/angular-sanitize/angular-sanitize.min.js',
           './bower_components/angular-animate/angular-animate.min.js',
           './bower_components/angular-bootstrap/ui-bootstrap.min.js',
           './bower_components/ui-router/release/angular-ui-router.min.js',
