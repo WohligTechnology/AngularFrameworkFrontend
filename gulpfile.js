@@ -43,3 +43,5 @@ gulp.task('watch:all', function() {
 });
 
 gulp.task('watch', ["watch:all"]);
+gulp.task('default', ["watch:all"]);
+gulp.task('development', ["watch:all"]);
