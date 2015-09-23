@@ -2,7 +2,6 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var watch = require('gulp-watch');
-var livereload = require('gulp-livereload');
 var connect = require("gulp-connect");
 
 
