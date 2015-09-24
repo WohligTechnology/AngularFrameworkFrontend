@@ -78,16 +78,27 @@ gulp.task('inlinesource', function () {
 
 gulp.task('uglify:js', function () {
     return gulp.src('./w/w.js')
-        .pipe(uglify())
+        .pipe(uglify({mangle:false}))
         .pipe(gulp.dest('./w'));
 });
 
 gulp.task('concat:js', function () {
-    return gulp.src(['./js/app.js',
-                     './js/controller.js',
+    return gulp.src([
+        './bower_components/jquery/dist/jquery.min.js',
+        './bower_components/bootstrap/dist/js/bootstrap.min.js',
+        './bower_components/flexslider/jquery.flexslider-min.js',
+        './bower_components/angular/angular.min.js',
+        './bower_components/angular-sanitize/angular-sanitize.min.js',
+        './bower_components/angular-animate/angular-animate.min.js',
+        './bower_components/angular-bootstrap/ui-bootstrap.min.js',
+        './bower_components/ui-router/release/angular-ui-router.min.js',
+        './bower_components/angular-flexslider/angular-flexslider.js',
+                     './js/app.js',
+                     './js/controllers.js',
                      './js/templateservice.js',
                      './js/navigation.js',
-                     './w/js/templates.js'])
+                     './w/js/templates.js',
+    ])
         .pipe(concat('w.js'))
         .pipe(gulp.dest('./w'));
 });
@@ -169,12 +180,12 @@ gulp.task('watch:all', function () {
 });
 
 
-gulp.task('watch', ["watch:all"]);
-gulp.task('default', ["watch:all"]);
-gulp.task('development', ["watch:all"]);
+gulp.task('watch', ["sass:development", "watch:all"]);
+gulp.task('default', ["sass:development", "watch:all"]);
+gulp.task('development', ["sass:development", "watch:all"]);
 gulp.task('minifyhtml', ["minify:indexHTML", "minify:views", "templatecache"]);
 gulp.task('copy', ["copy:img", "copy:fonts"]);
 
 gulp.task('production', function () {
-    runSequence(["copy:img", "copy:fonts", "sass:production", "minify:indexproduction", "minify:views"], "clean:tmp", ["minify:css", "templatecache"], "clean:tmp", "concat:js", "clean:tmp", "uglify:js", "clean:tmp", "inlinesource", "clean:tmp", "gzipfile", "clean:tmp", 'clean:w', "tarball", "clean:tmp", 'clean:w', 'clean:production');
+    runSequence(["copy:img", "copy:fonts", "sass:production", "minify:indexproduction", "minify:views"], "clean:tmp", ["minify:css", "templatecache"], "clean:tmp", "concat:js", "clean:tmp", "uglify:js", "clean:tmp", "inlinesource", "clean:tmp", "gzipfile", "clean:tmp", "tarball", "clean:tmp");
 });
