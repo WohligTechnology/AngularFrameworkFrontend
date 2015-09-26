@@ -138,8 +138,8 @@ gulp.task('minify:css', function() {
         }))
         .pipe(rename('w.css'))
         .pipe(replace('url(../', 'url('))
-        .pipe(replace("url('../", 'url('))
-        .pipe(replace('url("../', 'url('))
+        .pipe(replace("url('../", "url('"))
+        .pipe(replace('url("../', 'url("'))
         .pipe(gulp.dest('./w/'));
 });
 

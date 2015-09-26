@@ -4,6 +4,7 @@
   "description": "AngularFrameworkFrontend",
   "main": "Gruntfile.js",
   "dependencies": {
+    "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.7.0",
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
