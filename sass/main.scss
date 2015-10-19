@@ -1,0 +1,28 @@
+/*Start writing sass here*/
+@import "../bourbon/bourbon";
+@import "../bower_components/bootstrap/dist/css/bootstrap.min.css";
+@import "../bower_components/flexslider/flexslider.css";
+@import "../bower_components/fontawesome/css/font-awesome.min.css";
+ body {
+  padding-top: 70px;
+}
+img.loading {
+  text-align: center;
+  opacity: 1;
+  width: 32px !important;
+  height: auto;
+}
+img {
+  opacity: 0;
+  //    .transition(all 1s ease);
+
+}
+img.doneLoading {
+  opacity: 1;
+}
+nav li:hover .dropdown-menu {
+  display: block;
+}
+h1 {
+    color:pink;
+}

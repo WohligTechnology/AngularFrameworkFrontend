@@ -2,25 +2,41 @@
 <html lang="en" ng-app="firstapp">
 
 <head ng-controller="headerctrl">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title ng-bind="'Angular Framework Frontend - '+template.title">Angular Framework Frontend</title>
+    <title ng-bind="'Project Name - '+template.title">Project Name</title>
 
     <link rel="shortcut icon" href="img/favicon.ico" />
-    
-    <link rel="stylesheet/less" type="text/less" href="less/style.less" />
-    <!--<script src="w/w.css"></script>-->
-    <script src="w/w.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
 
-    <!--Just for the demo of ngAutocomplete-->
-    <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>-->
-    <!--Just for the demo of ngAutocomplete-->
+    <link rel="stylesheet" type="text" href="css/main.css" />
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/flexslider/jquery.flexslider-min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-flexslider/angular-flexslider.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <script src="bower_components/ui-router/release/angular-ui-router.min.js"></script>
 
 
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/lodash/lodash.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/templateservice.js"></script>
+
+    <script>
+      var isproduction=false;
+    </script>
     <!--[if IE]>
         <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
@@ -29,9 +45,7 @@
 
 <body>
 
-    <div class="repeated-item" ui-view>
-    </div>
-
+    <div class="repeated-item" ui-view></div>
 
 </body>
 
