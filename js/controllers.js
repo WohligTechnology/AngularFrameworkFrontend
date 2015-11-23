@@ -15,9 +15,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   ];
 })
 
-.controller('FeatureCtrl', function($scope, TemplateService) {
-  $scope.template = TemplateService;
-})
 .controller('headerctrl', function($scope, TemplateService) {
   $scope.template = TemplateService;
 })

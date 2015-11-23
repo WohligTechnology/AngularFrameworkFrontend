@@ -7,7 +7,7 @@ var firstapp = angular.module('firstapp', [
 ]);
 
 firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
-    
+
     // for http request with session
     $httpProvider.defaults.withCredentials = true;
 
@@ -17,12 +17,6 @@ firstapp.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
         url: "/home",
         templateUrl: "views/template.html",
         controller: 'HomeCtrl'
-    })
-
-    .state('feature', {
-        url: "/feature",
-        templateUrl: "views/template.html",
-        controller: 'FeatureCtrl'
     })
 
     $urlRouterProvider.otherwise("/home");

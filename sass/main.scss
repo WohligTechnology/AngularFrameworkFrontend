@@ -1,9 +1,20 @@
-/*Start writing sass here*/
-@import "../bourbon/bourbon";
-@import "../bower_components/bootstrap/dist/css/bootstrap.min.css";
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "../bower_components/flexslider/flexslider.css";
-@import "../bower_components/fontawesome/css/font-awesome.min.css";
- body {
+@import "../bower_components/font-awesome/css/font-awesome.min.css";
+
+/* Bootstrap Variables Goes Here */
+
+$brand-primary: #0d9dff !default;
+$brand-success: #84ce3c !default;
+$brand-warning: #ffec39 !default;
+$brand-danger: #fc483f !default;
+$brand-info: #000072 !default;
+
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
   padding-top: 70px;
 }
 img.loading {
@@ -14,8 +25,7 @@ img.loading {
 }
 img {
   opacity: 0;
-  //    .transition(all 1s ease);
-
+  @include transition(all 300ms ease);
 }
 img.doneLoading {
   opacity: 1;
@@ -23,6 +33,4 @@ img.doneLoading {
 nav li:hover .dropdown-menu {
   display: block;
 }
-h1 {
-    color:pink;
-}
+/* Start writing sass here */
