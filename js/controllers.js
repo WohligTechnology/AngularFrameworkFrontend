@@ -17,6 +17,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
 .controller('headerctrl', function($scope, TemplateService) {
   $scope.template = TemplateService;
+  $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+    $(window).scrollTop(0);
+  });
 })
 
 ;
