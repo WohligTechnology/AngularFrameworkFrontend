@@ -92,12 +92,10 @@ gulp.task('deploy', function() {
 
 
 gulp.task('ftp', function() {
-  console.log(password);
   var decrypted = CryptoJS.AES.decrypt(ftpString, password);
   var decryptedJSON = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
 
   decryptedJSON.log = gutil.log;
-  console.log(decryptedJSON);
   var conn = ftp.create(decryptedJSON);
 
 
