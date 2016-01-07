@@ -57,7 +57,6 @@ var open = require('gulp-open');
 var wait = require('gulp-wait');
 var zip = require('gulp-zip');
 var gutil = require('gulp-util');
-//var ftp = require('gulp-ftp');
 var replace = require('gulp-replace');
 var imagemin = require('gulp-imagemin');
 var prompt = require("gulp-prompt");
