@@ -52,13 +52,14 @@ var tar = require('gulp-tar');
 var gulpSequence = require('gulp-sequence');
 var clean = require('gulp-clean');
 var open = require('gulp-open');
-var wait = require('gulp-wait')
+var wait = require('gulp-wait');
 var zip = require('gulp-zip');
 var gutil = require('gulp-util');
-var ftp = require('gulp-ftp');
+//var ftp = require('gulp-ftp');
 var replace = require('gulp-replace');
 var imagemin = require('gulp-imagemin');
 var prompt = require("gulp-prompt");
+var ftp = require( 'vinyl-ftp' );
 
 var templateCacheBootstrap = "firstapp.run(['$templateCache', function($templateCache) {";
 
@@ -93,6 +94,32 @@ gulp.task('deploy', function() {
 
         }));
 });
+
+
+
+gulp.task( 'ftp2', function () {
+
+	var conn = ftp.create( {
+		host:     'wohlig.co.in',
+		user:     'wohligco',
+		password: 'wearew0hl1g',
+		parallel: 10,
+		log:      gutil.log
+	} );
+
+	var globs = [
+		'./production/**',
+	];
+
+	// using base = '.' will transfer everything to /public_html correctly
+	// turn off buffering in gulp.src for best performance
+
+	return gulp.src( globs, { base: './production', buffer: false } )
+		.pipe( conn.newer( '/public_html/temp123' ) ) // only upload newer files
+		.pipe( conn.dest( '/public_html/temp123' ) );
+
+} );
+
 
 
 gulp.task('ftp', function() {
@@ -143,6 +170,11 @@ gulp.task('minify:css', function() {
         .pipe(replace("url('../", "url('"))
         .pipe(replace('url("../', 'url("'))
         .pipe(gulp.dest('./w/'));
+});
+
+gulp.task('copy:indexhtml', function() {
+    return gulp.src("./w/index.html")
+        .pipe(gulpCopy("./production/",{prefix:1}));
 });
 
 gulp.task('gzipfile', function() {
@@ -281,3 +313,4 @@ gulp.task('copy', ["copy:img", "copy:fonts"]);
 
 
 gulp.task('production', gulpSequence(["copy:img", "copy:fonts", "sass:production", "minify:indexproduction", "minify:views"], 'clean:tmp', ["minify:css", "templatecache"], "concat:js", 'clean:tmp', "uglify:js", 'clean:tmp', "inlinesource", 'clean:tmp', "gzipfile", 'clean:tmp', 'clean:tmp', "zip"));
+gulp.task('production2', gulpSequence(["copy:img", "copy:fonts", "sass:production", "minify:indexproduction", "minify:views"], 'clean:tmp', ["minify:css", "templatecache"], "concat:js", 'clean:tmp', "uglify:js", 'clean:tmp', "inlinesource", 'clean:tmp', "copy:indexhtml", 'clean:tmp', 'clean:tmp', "zip"));

@@ -1,9 +1,10 @@
 {
   "name": "AngularFrameworkFrontend",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "homepage": "https://www.wohlig.com",
   "authors": [
-    "tushar@wohlig.com"
+    "tushar@wohlig.com",
+    "chintan@wohlig.com"
   ],
   "description": "Angular Framework Frontend",
   "license": "MIT",
@@ -29,5 +30,8 @@
     "lodash": "~3.10.0",
     "ui-router": "~0.2.15",
     "angular-animate": "~1.4.6"
+  },
+  "resolutions": {
+    "angular": "~1.4.8"
   }
 }
