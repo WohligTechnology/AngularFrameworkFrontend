@@ -27,7 +27,7 @@
     "bourbon": "~4.2.5",
     "font-awesome": "~4.4.0",
     "jquery": "~2.1.4",
-    "lodash": "~3.10.0",
+    "lodash": "~4.0.0",
     "ui-router": "~0.2.15",
     "angular-animate": "~1.4.6"
   },
