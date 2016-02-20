@@ -21,8 +21,6 @@ var jsArray = [
 var replacehostFrom = "http://localhost/demo/";
 var replacehostTo = "http://wohlig.co.in/demo2/";
 
-
-
 var ftpString = "U2FsdGVkX1+jcFED/CJbcYNiOJ42eBsjlxqmrcKWSIPH9Sao/4535zPQX5Fa7VYGAHSfkKCXbDpiUfJhkRRijaerS1lJ/k+dSfqsfl45ICkzMTJ7fBNVDj/242ur9ZG4HZDhSe1O/J4vEUboWDRBhg==";
 
 var uploadingFolder = "angularframework";
@@ -190,7 +188,9 @@ gulp.task('inlinesource', function() {
 
 gulp.task('uglify:js', function() {
   var uglify = require('gulp-uglify');
+  var stripDebug = require('gulp-strip-debug');
   return gulp.src('./w/w.js')
+    .pipe(stripDebug())
     .pipe(uglify({
       mangle: false
     }))
