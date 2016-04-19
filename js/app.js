@@ -64,3 +64,10 @@ firstapp.directive('fancyboxBox', function($document) {
         }
     };
 });
+
+
+firstapp.config(function ($translateProvider) {
+  $translateProvider.translations('en', LanguageEnglish);
+  $translateProvider.translations('hi', LanguageHindi);
+  $translateProvider.preferredLanguage('en');
+});
