@@ -12,11 +12,11 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
   $httpProvider.defaults.withCredentials = true;
   $stateProvider
     .state('home', {
-    url: "/home",
+    url: "/",
     templateUrl: "views/template.html",
     controller: 'HomeCtrl'
   });
-  $urlRouterProvider.otherwise("/home");
+  $urlRouterProvider.otherwise("/");
   $locationProvider.html5Mode(isproduction);
 });
 

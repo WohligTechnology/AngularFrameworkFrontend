@@ -30,7 +30,7 @@ img.doneLoading {
 nav li:hover .dropdown-menu {
   display: block;
 }
-a {
+a, .btn {
   cursor: pointer;
   @include transition(all ease 300ms);
 }
