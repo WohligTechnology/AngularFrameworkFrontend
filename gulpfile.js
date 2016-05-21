@@ -138,7 +138,9 @@ gulp.task('minify:css', function() {
     var replace = require('gulp-replace');
     var rename = require('gulp-rename');
     var minifyCss = require('gulp-minify-css');
+    var concat = require('gulp-concat');
     return gulp.src('./w/main.css')
+
         .pipe(minifyCss({
             keepSpecialComments: 0,
             rebase: false
