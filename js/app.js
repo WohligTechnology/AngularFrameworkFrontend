@@ -4,7 +4,9 @@ var firstapp = angular.module('firstapp', [
   'phonecatControllers',
   'templateservicemod',
   'navigationservice',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'angulartics',
+  'angulartics.google.analytics'
 ]);
 
 firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) {
