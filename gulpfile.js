@@ -89,6 +89,7 @@ gulp.task('ftp', function() {
     var decryptedJSON = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
 
     decryptedJSON.log = gutil.log;
+    decryptedJSON.parallel = 10;
     var conn = ftp.create(decryptedJSON);
 
 
@@ -143,7 +144,7 @@ gulp.task('minify:css', function() {
     var concat = require('gulp-concat');
     return gulp.src('./w/main.css')
 
-        .pipe(minifyCss({
+    .pipe(minifyCss({
             keepSpecialComments: 0,
             rebase: false
         }))
