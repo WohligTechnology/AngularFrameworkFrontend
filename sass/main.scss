@@ -49,17 +49,6 @@ a, .btn {
   outline: 0;
   @include box-shadow(none);
 }
-.fancybox-image {
-    opacity: 1!important;
-}
-.fancybox-image {
-    opacity: 1!important;
-}
-.fancybox-nav {
-    top: 50%;
-    @include transform(translateY(-50%));
-    height: 40%;
-  }
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
