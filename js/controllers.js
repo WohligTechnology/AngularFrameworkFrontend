@@ -1,4 +1,4 @@
-angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap','ngAnimate', 'ngSanitize', 'angular-flexslider'])
+angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ui.bootstrap', 'ngAnimate', 'ngSanitize', 'angular-flexslider'])
 
 .controller('HomeCtrl', function($scope, TemplateService, NavigationService, $timeout) {
   //Used to name the .html file
@@ -23,30 +23,28 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
     $(window).scrollTop(0);
   });
+  $.fancybox.close(true);
 })
 
-.controller('languageCtrl', function($scope, TemplateService,$translate,$rootScope) {
+.controller('languageCtrl', function($scope, TemplateService, $translate, $rootScope) {
 
-    $scope.changeLanguage = function() {
-      console.log("Language CLicked");
+  $scope.changeLanguage = function() {
+    console.log("Language CLicked");
 
-      if(!$.jStorage.get("language")){
+    if (!$.jStorage.get("language")) {
+      $translate.use("hi");
+      $.jStorage.set("language", "hi");
+    } else {
+      if ($.jStorage.get("language") == "en") {
         $translate.use("hi");
-        $.jStorage.set("language","hi");
+        $.jStorage.set("language", "hi");
+      } else {
+        $translate.use("en");
+        $.jStorage.set("language", "en");
       }
-      else {
-        if($.jStorage.get("language") == "en")
-        {
-          $translate.use("hi");
-          $.jStorage.set("language","hi");
-        }
-        else {
-          $translate.use("en");
-          $.jStorage.set("language","en");
-        }
-      }
+    }
     //  $rootScope.$apply();
-    };
+  };
 
 
 })
