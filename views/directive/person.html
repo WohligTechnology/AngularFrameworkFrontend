@@ -1,0 +1,15 @@
+<div>
+    <ul>
+        <li>Name:<span ng-bind="human.name"></span>
+        </li>
+        <li>Age:<span ng-bind="human.age"></span>
+        </li>
+        <li>Email:<span ng-bind="human.email"></span>
+        </li>
+        <li>Gender:<span ng-bind="human.gender"></span>
+        </li>
+        <li ng-if="human.cutprice">CutPrice : {{human.cutprice}}</li>
+
+        <img ng-src="human.image" alt="">
+    </ul>
+</div>
