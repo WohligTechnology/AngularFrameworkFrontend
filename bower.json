@@ -31,7 +31,8 @@
     "angular": "^1.5.0",
     "fancyBox": "fancybox#^2.1.5",
     "angulartics-google-analytics": "^0.1.4",
-    "angular-swiper": "^0.4.0"
+    "angular-swiper": "^0.4.0",
+    "smart-app-banner": "https://github.com/kudago/smart-app-banner.git"
   },
   "devDependencies": {
     "angular-translate": "^2.11.0"
