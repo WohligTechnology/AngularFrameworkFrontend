@@ -1,0 +1,19 @@
+application: add name of project
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: yes
+default_expiration: "1d 12h"
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /(.+\.(gif|png|jpg|css|js|html|eot|woff|woff2|ttf|svg|otf|xml|txt|json|ico))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg|css|js|html|eot|woff|woff2|ttf|svg|otf|xml|txt|json|ico)$
+  application_readable: true
+
+- url: .*
+  script: index.php
