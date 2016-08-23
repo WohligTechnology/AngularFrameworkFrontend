@@ -54,3 +54,94 @@ a, .btn {
 //bootstrap forms
 /* Start writing sass here */
 @import "fancybox-override";
+
+@font-face {
+  font-family: "jurabold";
+  src: url('../fonts/Jura-Bold.ttf');
+}
+@font-face {
+  font-family: "juraregular";
+  src: url('../fonts/Jura-Regular.ttf');
+}
+
+.yfl-relative{
+  position: relative;
+  .main-middle{
+    background-image: url(../img/subscribe_bg.jpg);
+    background-size: cover;
+    // position: absolute;
+    // top: 0;
+    // left: 40%;
+    // z-index: 9999;
+    .logo{
+        position: relative;
+        // background-image: url(../img/logo.png);
+        text-align: center;
+        margin-top: 20px;
+          img {
+            width: 95px;
+            height: 100px;
+            margin: 0 auto;
+          }
+      }
+      h1{
+        font-size: 22px;
+        margin: 30px 0 0 0;
+        font-family: "jurabold";
+        text-transform: uppercase;
+        // font-weight: bold;
+        }
+        .mid-cont{
+          margin: 0 0 30px 0;
+        }
+        p{
+          font-family: 'juraregular';
+          font-size: 16px;
+          line-height: 30px;
+          padding: 0 54px 0 54px;
+        }
+      .red-text{
+        color: red;
+      }
+      .search{
+        margin: 20px auto;
+        position: relative;
+        width: 55%;
+      }
+      .search-input{
+        height: 65px;
+        border: none;
+        font-family: 'jurabold';
+        font-size: 15px;
+      }
+      .go-btn{
+        width: 80px;
+        height: 65px;
+        border: none;
+        background-color: #97d3d3;
+        font-size: 35px;
+        color: #fff;
+      }
+    //   .newsletter {
+    //     width: 100%;
+    //     float: left;
+    //     position: relative;
+    //     margin: 22px 0px;
+    //      input {
+    //       background-color: white;
+    //       color: black;
+    //       height: 65px;
+    //       max-width: 300px;
+    //       font-size: 15px;
+    //    }
+    //    .submit{
+    //      font-size: 36px;
+    //      max-width: 57px;
+    //      height: 65px;
+    //      background-color: #97d3d3;
+    //      padding: 5px 0 5px 13px;
+    //      color: #fff;
+    //    }
+    // }
+  }
+}
