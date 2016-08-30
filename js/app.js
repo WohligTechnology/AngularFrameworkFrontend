@@ -17,12 +17,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $loc
     url: "/",
     templateUrl: "views/template.html",
     controller: 'HomeCtrl'
-  })
-  .state('main', {
-  url: "/",
-  templateUrl: "views/template.html",
-  controller: 'mCtrl'
-});
+  });
   $urlRouterProvider.otherwise("/");
   $locationProvider.html5Mode(isproduction);
 });
@@ -73,20 +68,6 @@ firstapp.directive('fancyboxBox', function($document) {
     };
 });
 
-firstapp.directive('autoHeight', function($compile, $parse) {
-   return {
-       restrict: 'EA',
-       replace: false,
-       link: function($scope, element, attrs) {
-           var $element = $(element);
-           var windowHeight = $(window).height();
-           var addHeight = function() {
-               $element.css("min-height", windowHeight);
-           };
-           addHeight();
-       }
-   };
-});
 
 firstapp.config(function ($translateProvider) {
   $translateProvider.translations('en', LanguageEnglish);
