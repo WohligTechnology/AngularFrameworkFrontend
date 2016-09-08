@@ -32,7 +32,10 @@ img.doneLoading {
 nav li:hover .dropdown-menu {
   display: block;
 }
-a, .btn {
+#map img {
+  opacity: 1;
+}
+a, .btn,[ui-sref] {
   cursor: pointer;
   @include transition(all ease 300ms);
 }
