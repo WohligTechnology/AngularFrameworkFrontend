@@ -65,6 +65,7 @@ firstapp.directive('fancybox', function($document) {
                 openEffect: 'fade',
                 closeEffect: 'fade',
                 closeBtn: true,
+                padding: 0,
                 helpers: {
                     media: {}
                 }
