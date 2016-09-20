@@ -50,7 +50,7 @@ a,
     @include transition(all ease 300ms);
 }
 
-.footer {
+footer {
     font-size: 12px;
     background-color: #eee;
     padding: 10px 0;
@@ -107,5 +107,9 @@ a,
 
 
 /* Start writing sass here */
+
+.content {
+    min-height: 450px;
+}
 
 @import "fancybox-override";

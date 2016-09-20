@@ -48,7 +48,7 @@ firstapp.directive('img', function($compile, $parse) {
     };
 });
 
-firstapp.directive('fancyboxBox', function($document) {
+firstapp.directive('fancybox', function($document) {
     return {
         restrict: 'EA',
         replace: false,
@@ -73,6 +73,17 @@ firstapp.directive('fancyboxBox', function($document) {
     };
 });
 
+firstapp.directive('autoHeight', function($compile, $parse) {
+    return {
+        restrict: 'EA',
+        replace: false,
+        link: function($scope, element, attrs) {
+            var $element = $(element);
+            var windowHeight = $(window).height();
+            $element.css("min-height", windowHeight);
+        }
+    };
+});
 
 firstapp.config(function($translateProvider) {
     $translateProvider.translations('en', LanguageEnglish);
