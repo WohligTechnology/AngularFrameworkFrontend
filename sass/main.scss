@@ -105,11 +105,27 @@ footer {
     }
 }
 
+//SWIPER CSS
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+    background-image: url(../img/prev.png);
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    background-image: url(../img/next.png);
+}
+
 
 /* Start writing sass here */
 
 .content {
     min-height: 450px;
+}
+
+.full-img {
+    width: 100%;
+    display: block;
 }
 
 @import "fancybox-override";
