@@ -85,6 +85,9 @@ footer {
     .form-control {
         border-color: $brand-danger;
         color: $brand-danger;
+        &::-webkit-input-placeholder {
+            color: $brand-danger;
+        }
     }
 }
 
