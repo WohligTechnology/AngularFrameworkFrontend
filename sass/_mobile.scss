@@ -1,5 +1,5 @@
-@media (max-width: $screen-xs-max) {}
-
-@media (max-width: $screen-sm-max) {}
-
-@media (max-width: $screen-md-max) {}
+@media (min-width(var(--breakpoint-xs))) {}
+@media (min-width(var(--breakpoint-sm))) {}
+@media (min-width(var(--breakpoint-md))) {}
+@media (min-width(var(--breakpoint-lg))) {}
+@media (min-width(var(--breakpoint-xl))) {}
